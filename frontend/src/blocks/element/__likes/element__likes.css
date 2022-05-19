@@ -1,0 +1,7 @@
+.element__likes {
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: min-content;
+  grid-template-rows: min-content min-content;
+  justify-content: space-between;
+}

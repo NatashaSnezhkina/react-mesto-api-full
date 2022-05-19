@@ -1,0 +1,7 @@
+.element__info {
+  margin: 25px 20px 25px 21px;
+  display: grid;
+  grid-template-columns: calc(100% - 22px) min-content;
+  grid-template-rows: min-content;
+  justify-content: space-between;
+}

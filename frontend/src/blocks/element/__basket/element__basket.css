@@ -1,0 +1,21 @@
+.element__basket {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 18px;
+  height: 19px;
+  margin: 0;
+  padding: 0;
+  align-self: center;
+  background-image: url(../../../images/garbage.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.element__basket:hover {
+  opacity: 0.6;
+}

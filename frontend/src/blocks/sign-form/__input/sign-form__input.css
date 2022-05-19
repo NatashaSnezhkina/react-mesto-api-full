@@ -1,0 +1,20 @@
+.sign-form__input {
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #CCCCCC;
+  background-color: inherit;
+  font-family: inherit;
+  color: #CCCCCC;
+  height: 27px;
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+  line-height: 17px;
+  padding-bottom: 13px;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+}
+
+.sign-form__input:first-of-type {
+  margin-bottom: 30px;
+}
