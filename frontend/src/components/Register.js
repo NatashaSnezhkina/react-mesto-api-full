@@ -6,8 +6,8 @@ class Register extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      email: 'test@test.ru',
-      password: 'test',
+      email: '',
+      password: '',
       message: ''
     }
     this.handleChange = this.handleChange.bind(this);
@@ -33,11 +33,25 @@ class Register extends React.Component {
       <div className="sign-form">
         <h3 className="sign-form__title">Регистрация</h3>
         <form className="form sign-form__form" onSubmit={this.handleSubmit}>
-          <input className="sign-form__input" id="email" value={this.state.email} onChange={this.handleChange}
-            type="email" name="email" placeholder="Email" required minLength="2" maxLength="30" />
+          <input
+            className="sign-form__input"
+            id="email"
+            value={this.state.email}
+            onChange={this.handleChange}
+            type="email"
+            name="email"
+            placeholder="Email"
+            required minLength="2"
+            maxLength="30" />
           <span className="error"></span>
-          <input className="sign-form__input" id="password" value={this.state.password} onChange={this.handleChange}
-            type="text" name="password" placeholder="Пароль" />
+          <input
+            className="sign-form__input"
+            id="password"
+            value={this.state.password}
+            onChange={this.handleChange}
+            type="text"
+            name="password"
+            placeholder="Пароль" />
           <span className="error"></span>
           <button type="submit" className="submit-button sign-form__button" >Зарегистрироваться</button>
         </form>

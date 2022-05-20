@@ -18,8 +18,8 @@ function Main({
     <main>
       <section className="profile">
         <div className="profile__avatar-container">
-          <div className="profile__avatar-overlay profile__avatar-overlay_closed"></div>
-          <img className="profile__avatar" src={currentUser.avatar} onClick={onEditAvatar} alt={currentUser.name} />
+          <div className="profile__avatar-overlay" onClick={onEditAvatar}></div>
+          <img className="profile__avatar" src={currentUser.avatar} alt={currentUser.name} />
         </div>
         <div className="profile__info">
           <div className="profile__main-info">

@@ -14,8 +14,9 @@
   bottom: 0;
   right: 0;
   left: 0;
+  opacity: 0;
 }
 
-.profile__avatar__overlay:hover {
+.profile__avatar-overlay:hover {
   opacity: 1;
 }

@@ -34,9 +34,35 @@ function App() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (loggedInn === true) {
+    const token = localStorage.getItem('jwt');
+    console.log("LoggedInn in authoriztion hook:", loggedInn);
+    if (token) {
+      Auth.getContent(token)
+        .then((res) => {
+          // console.log(res);
+          setLoggedInn(true);
+          console.log("I have just changed loggedInn to TRUE:", loggedInn);
+          setEmail(res.email);
+          setCurrentUser(res);
+        })
+        .catch((err) => {
+          console.log('не получилось')
+          setIsSuccess(false);
+          if (err.status === 401) {
+            console.log('401 — Токен не передан или передан не в том формате');
+          }
+          console.log('401 — Переданный токен некорректен');
+        })
+    }
+  }, []);
+
+  useEffect(() => {
+    console.log("I am triggered with loggedInn change:", loggedInn);
+    if (loggedInn===true) {
+      api.setToken(localStorage.getItem('jwt'));
       api.getProfileInfo()
         .then((currentUser) => {
+          // console.log('prodile info')
           setCurrentUser(currentUser);
         })
         .catch(err => {
@@ -54,24 +80,6 @@ function App() {
     }
   }, [loggedInn])
 
-  useEffect(() => {
-    if (loggedInn) {
-      return Auth.getContent(localStorage.getItem('jwt'))
-        .then((res) => {
-          console.log(res);
-          setLoggedInn(true);
-          setEmail(res.email);
-          setCurrentUser(res);
-        })
-        .catch((err) => {
-          setIsSuccess(false);
-          if (err.status === 401) {
-            console.log('401 — Токен не передан или передан не в том формате');
-          }
-          console.log('401 — Переданный токен некорректен');
-        })
-    }
-  }, []);
 
   // actions with cards
 
@@ -127,7 +135,7 @@ function App() {
     api.sendProfileInfo(currentUser)
       .then((user) => {
         console.log(user);
-        setCurrentUser({name: user.name, about: user.about, avatar: currentUser.avatar});
+        setCurrentUser({ name: user.name, about: user.about, avatar: currentUser.avatar });
         setIsEditProfilePopupOpen(false);
       })
       .catch(err => {
@@ -139,7 +147,7 @@ function App() {
     console.log(currentUser);
     api.sendAvatar(currentUser.avatar)
       .then((res) => {
-        setCurrentUser({name: currentUser.name, about: currentUser.about, avatar: res.avatar});
+        setCurrentUser({ name: currentUser.name, about: currentUser.about, avatar: res.avatar });
         setIsEditAvatarPopupOpen(false);
       })
       .catch(err => {
@@ -201,6 +209,7 @@ function App() {
       });
   }
 
+
   function handleRegister(email, password) {
     return Auth.register(email, password)
       .then(() => {
@@ -236,7 +245,7 @@ function App() {
             <Routes>
               <Route exact path="/"
                 element={
-                  <ProtectedRoute loggedIn={loggedInn}>
+                  <ProtectedRoute loggedIn={localStorage.getItem('jwt')}>
                     <Main
                       onEditProfile={handleEditProfileClick}
                       onAddPlace={handleAddClick}

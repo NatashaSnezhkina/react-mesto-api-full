@@ -38,6 +38,7 @@ class Api {
   }
 
   getProfileInfo() {
+    // console.log(this._token);
     return fetch(`${this._address}/users/me`, {
       headers: {
         'Content-Type': 'application/json',
