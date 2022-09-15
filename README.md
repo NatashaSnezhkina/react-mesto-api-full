@@ -1,4 +1,28 @@
-# react-mesto-api-full
-Репозиторий для приложения проекта `Mesto`, включающий фронтенд и бэкенд части приложения со следующими возможностями: авторизации и регистрации пользователей, операции с карточками и пользователями. Бэкенд расположите в директории `backend/`, а фронтенд - в `frontend/`. 
+# Project «Mesto»
+
+## Content
+* [General](#General)
+* [Technologies](#Technologies)
+* [Settings](#Settings)
+* [Link](#Link)
+
+**General**
+
+This project allows people to share beautiful places.
+Functional: add/delete cards, like cards, editing profile info and changing profile photo.
+
+**Technologies**
+* flexbox layout
+* grid
+* BEM Nested
+* Implementation of popups
+* Server connection
+* webpack
+
+**Settings**
+* React.js
+* Node.js
+
+**Link** 
 
 https://mesto.natasha.snezh.nomoredomains.xyz/
