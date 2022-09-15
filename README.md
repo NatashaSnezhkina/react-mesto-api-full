@@ -21,7 +21,7 @@ Functional: add/delete cards, like cards, editing profile info and changing prof
 
 **Settings**
 * React.js
-* Node.js
+* express.js
 
 **Link** 
 
