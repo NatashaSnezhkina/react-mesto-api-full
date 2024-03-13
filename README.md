@@ -22,7 +22,3 @@ Functional: add/delete cards, like cards, editing profile info and changing prof
 **Settings**
 * React.js
 * express.js
-
-**Link** 
-
-https://mesto.natasha.snezh.nomoredomains.xyz/
